@@ -1,23 +1,42 @@
 .containerform {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 500px;
-    width: 100%;
-    margin: auto;
-    padding: 16px;
-    color: rgb(255 255 255);
-    z-index: 10;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 500px;
+	width: 100%;
+	margin: auto;
+	padding: 16px;
+	color: rgb(255 255 255);
+	z-index: 10;
 }
-.form{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin: auto;
-    padding: 12px;
-    background-color: transparent;
-    border: solid 1px white;
-    border-radius: 16px;
+
+.form {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	margin: auto;
+	padding: 12px;
+	background-color: transparent;
+	border: solid 1px white;
+	border-radius: 16px;
+}
+
+.input {
+	background-color: transparent;
+	border: none;
+	color: white;
+
+	font-size: 20px;
+	line-height: 1.25;
+}
+
+.input::placeholder {
+	color: white;
+}
+
+.input:focus {
+	outline: none;
+	border: none;
 }

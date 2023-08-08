@@ -12,7 +12,7 @@ export default function Home() {
       {/* Overlay */}
       <div className={styles.overlay}/>
       {/* Background image */}
-      <Image src='https://images.unsplash.com/photo-1579370909153-13bc0bb1e2d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80' layout='fill' />
+      <Image src='https://images.unsplash.com/photo-1579370909153-13bc0bb1e2d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80' layout='fill' alt="none" />
         <Weather />
         {/* Search */}
         {/* <Search /> */}
