@@ -1,9 +1,8 @@
 
-import Weather from "@/component/weather/MainWeather";
+import MainWeather from "@/component/weather/MainWeather";
 import styles from "../app/page.module.scss"
 import "@/styles/globals.scss";
 import Image from "next/image";
-import Search from "@/component/search/Search";
 export default function Home() {
   
   return (
@@ -13,7 +12,7 @@ export default function Home() {
       <div className={styles.overlay}/>
       {/* Background image */}
       <Image src='https://images.unsplash.com/photo-1579370909153-13bc0bb1e2d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80' layout='fill' alt="none" />
-        <Weather />
+        <MainWeather />
         {/* Search */}
         {/* <Search /> */}
       </main>

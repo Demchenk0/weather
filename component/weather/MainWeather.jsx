@@ -3,8 +3,10 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { BsSearch } from 'react-icons/bs';
 import styles from '../weather/MainWeather.module.scss';
+import Weather from '../Weather';
+import Spinner from '../spinner/Spinner';
 
-const Weather = () => {
+const MainWeather = () => {
 	const [city, setCity] = useState('');
 	const [weather, setWeather] = useState({});
 	const [loading, setLoading] = useState(false);
@@ -16,28 +18,38 @@ const Weather = () => {
 		setLoading(true);
 		axios.get(url).then(response => {
 			setWeather(response.data);
-			console.log(response.data);
+			// console.log(response.data);
 		});
 		setCity('');
 		setLoading(false);
 	};
-	return (
-		<div className={styles.containerform}>
-			<form onSubmit={fetchWeather} className={styles.form} action="">
-				<div>
-					<input
-          onChange={(e)=> setCity(e.target.value)}
-						className={styles.input}
-						type="text"
-						placeholder="Search Sity"
-					/>
-				</div>
-				{/* <button onClick={fetchWeather}> */}
-				<BsSearch onClick={fetchWeather} size={25}/>
-				{/* </button> */}
-			</form>
-		</div>
-	);
+
+	if (loading) {
+		return <Spinner />
+	} else {
+		return (
+			<>
+			<div className={styles.containerform}>
+				<form onSubmit={fetchWeather} className={styles.form} action="">
+					<div>
+						<input
+							onChange={e => setCity(e.target.value)}
+							className={styles.input}
+							type="text"
+							placeholder="Search Sity"
+						/>
+					</div>
+					{/* <button onClick={fetchWeather}> */}
+					<BsSearch onClick={fetchWeather} size={25} />
+					{/* </button> */}
+				</form>
+			</div>
+			{/* Weather */}
+			{weather.main && <Weather data={weather} />}
+			</>
+		);
+	}
+	
 };
 
-export default Weather;
+export default MainWeather;
