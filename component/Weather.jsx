@@ -18,7 +18,23 @@ const Weather = ({ data }) => {
 				<p className={styles.pp}>{data.main.temp.toFixed(0)}&#176;</p>
 			</div>
 			{/* Bottom */}
-
+			<div className={styles.table}>
+				<p className={styles.first}>Weather in {data.name}</p>
+				<div className={styles.inf}>
+					<div>
+						<p className={styles.secondary}>{data.main.feels_like.toFixed(0)}&#176;</p>
+						<p className={styles.theardly}>Feels Like</p>
+					</div>
+					<div>
+						<p className={styles.secondary}>{data.main.humidity}%</p>
+						<p className={styles.theardly}>Humidity</p>
+					</div>
+					<div>
+						<p className={styles.secondary}>{data.wind.speed.toFixed(0)} MPH</p>
+						<p className={styles.theardly}>Winds</p>
+					</div>
+				</div>
+			</div>
 		</div>
 	);
 };
