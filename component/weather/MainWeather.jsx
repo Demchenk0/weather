@@ -25,31 +25,30 @@ const MainWeather = () => {
 	};
 
 	if (loading) {
-		return <Spinner />
+		return <Spinner />;
 	} else {
 		return (
 			<>
-			<div className={styles.containerform}>
-				<form onSubmit={fetchWeather} className={styles.form} action="">
-					<div>
-						<input
-							onChange={e => setCity(e.target.value)}
-							className={styles.input}
-							type="text"
-							placeholder="Search Sity"
-						/>
-					</div>
-					{/* <button onClick={fetchWeather}> */}
-					<BsSearch onClick={fetchWeather} size={25} />
-					{/* </button> */}
-				</form>
-			</div>
-			{/* Weather */}
-			{weather.main && <Weather data={weather} />}
+				<div className={styles.containerform}>
+					<form onSubmit={fetchWeather} className={styles.form} action="">
+						<div>
+							<input
+								onChange={e => setCity(e.target.value)}
+								className={styles.input}
+								type="text"
+								placeholder="Search Sity"
+							/>
+						</div>
+						{/* <button onClick={fetchWeather}> */}
+						<BsSearch onClick={fetchWeather} size={25} />
+						{/* </button> */}
+					</form>
+				</div>
+				{/* Weather */}
+				{weather.main && <Weather data={weather} />}
 			</>
 		);
 	}
-	
 };
 
 export default MainWeather;
