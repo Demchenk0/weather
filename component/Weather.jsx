@@ -15,7 +15,7 @@ const Weather = ({ data }) => {
 					/>
 					<p className={styles.p}>{data.weather[0].main}</p>
 				</div>
-				<p className={styles.pp}>{data.main.temp.toFixed(0)}&#176;</p>
+				<p className={styles.pp}>{((data.main.temp - 32) * 5/9).toFixed(0)}С&#176;</p>
 			</div>
 			{/* Bottom */}
 			<div className={styles.table}>
